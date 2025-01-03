@@ -5,7 +5,7 @@ include { minimap2_alignment } from '../modules/local/minimap2'
 
 process subset_aligned_reads {
     tag {prefix}
-    label 'process_high'
+    label 'process_low'
 
     conda (params.enable_conda ? 'bioconda::samtools=1.20' : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
